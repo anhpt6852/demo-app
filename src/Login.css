@@ -20,7 +20,7 @@ input[type=checkbox] {
     margin: 8px;
 }
 .error-message{
-    size: 6px;
+    font-size: 13px;
     color: red;
 }
 .container{
