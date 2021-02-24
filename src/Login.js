@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isValid, setIsValid] = useState(false);
 
-  useEffect(() => {
-    if (email.length > 3 && password.length > 6) { setIsValid(!isValid)}
-  }, [email,password])
   const handleSubmit = () => {
     console.log(email)
     console.log(password)
@@ -22,7 +18,7 @@ function Login() {
   }
   
   return (
-      <form className = 'form-input'>
+      <form className = 'form-input' >
       <div>
         <div className = 'username-input'>
         <label>
@@ -30,15 +26,15 @@ function Login() {
           <input type="text" name="name" value = {email} onChange = {handleChangeEmail} />
         </label>
         </div>
-        <label className = 'error-message'> {(!isValid ? 'Wrong email' : '')}</label>
+        {email.length<3&&<label className = 'error-message'>  Wrong email</label>}
         <div className = 'password-input'>
         <label>
           Password:
           <input type="password" name="pass" value = {password} onChange = {handleChangePassword}/>
         </label>
         </div>
-        <label className = 'error-message'> {(!isValid ? 'Wrong password' : '')}</label>
-        <div><input type="submit" value="Submit" onClick = {handleSubmit} disabled = {!isValid}/></div></div>
+        {password.length<6&&<label className = 'error-message'>  Wrong password</label>}
+        <div>{email.length>=3&&password.length>=6 ? <input type="submit" value="Submit" onClick = {handleSubmit} disabled = {false} /> : <input type="submit" value="Submit" onClick = {handleSubmit} disabled = {true} />} </div></div>
       </form>
   );
 }
