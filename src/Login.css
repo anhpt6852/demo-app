@@ -16,7 +16,21 @@ input[type=submit] {
     margin: 8px;
     box-sizing: border-box;
 }
+input[type=checkbox] {
+    margin: 8px;
+}
 .error-message{
     size: 6px;
     color: red;
+}
+.container{
+    text-align: center;
+    margin: 20px;
+    padding: auto;
+}
+h1 {
+    margin: 20px;
+}
+.form-input {
+    border: 1px black;
 }

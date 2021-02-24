@@ -18,6 +18,8 @@ function Login() {
   }
   
   return (
+    <div className = 'container'>
+    <h1>LOGIN PAGE</h1>
       <form className = 'form-input' >
       <div>
         <div className = 'username-input'>
@@ -34,8 +36,10 @@ function Login() {
         </label>
         </div>
         {password.length<6&&<label className = 'error-message'>  Wrong password</label>}
+        <div><input type = 'checkbox'></input> Remember Me</div>
         <div>{email.length>=3&&password.length>=6 ? <input type="submit" value="Submit" onClick = {handleSubmit} disabled = {false} /> : <input type="submit" value="Submit" onClick = {handleSubmit} disabled = {true} />} </div></div>
       </form>
+      </div>
   );
 }
 
